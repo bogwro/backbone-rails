@@ -8,7 +8,7 @@ module Backbone
       desc "This generator creates the client side crud scaffolding"
       
       def create_router_files 
-        template 'router.#{ext}', File.join(backbone_path, "routers", class_path, "#{plural_name}_router.js#{coffee_engine? ? '.coffee' : ''}")
+        template "router.#{ext}", File.join(backbone_path, "routers", class_path, "#{plural_name}_router.js#{coffee_engine? ? '.coffee' : ''}")
       end
       
       def create_view_files
