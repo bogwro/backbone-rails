@@ -17,7 +17,7 @@ module Backbone
           template "templates/#{view}.jst", File.join(backbone_path, "templates", plural_name, "#{view}.jst.ejs")
         end
         
-        template "views/model_view.#{ext}", File.join(backbone_path, "views", plural_name, "#{singular_name}_view.js.#{coffee_engine? ? '.coffee' : ''}")
+        template "views/model_view.#{ext}", File.join(backbone_path, "views", plural_name, "#{singular_name}_view.js#{coffee_engine? ? '.coffee' : ''}")
         template "templates/model.jst", File.join(backbone_path, "templates", plural_name, "#{singular_name}.jst.ejs")
       end
       
