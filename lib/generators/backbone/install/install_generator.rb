@@ -26,7 +26,8 @@ module Backbone
       end
     
       def create_app_file
-        template "app.coffee", "app/assets/javascripts/backbone/#{application_name.underscore}.js.coffee"
+        #template "app.coffee", "app/assets/javascripts/backbone/#{application_name.underscore}.js.coffee"
+        template "app.js", "app/assets/javascripts/backbone/#{application_name.underscore}.js"
       end
      
     end
