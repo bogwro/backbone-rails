@@ -24,16 +24,14 @@ module Backbone
         end
       end
       
-      def create_router_files 
-        #template 'router.coffee', File.join(backbone_path, "routers", class_path, "#{file_name}_router.js.coffee")
-        template 'router.js', File.join(backbone_path, "routers", class_path, "#{file_name}_router.js")
+      def create_router_files
+        template 'router.#{ext}', File.join(backbone_path, "routers", class_path, "#{file_name}_router.js#{coffee_engine? ? '.coffee' : ''}")
       end
       
       def create_view_files
          actions.each do |action|
            @action = action
-           #@view_path = File.join(backbone_path, "views", plural_name, "#{action}_view.js.coffee")
-           @view_path = File.join(backbone_path, "views", plural_name, "#{action}_view.js")
+           @view_path = File.join(backbone_path, "views", plural_name, "#{action}_view.js#{coffee_engine? ? '.coffee' : ''}")
            @jst_path = File.join(backbone_path,"templates", plural_name, "#{action}.jst.ejs")
            
            #template "view.coffee", @view_path

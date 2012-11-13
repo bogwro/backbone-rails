@@ -57,6 +57,10 @@ module Backbone
           false
         end
       end
+
+      def ext
+        coffee_engine? ? 'coffee' : 'js'
+      end
       
     end
   end
