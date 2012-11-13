@@ -49,6 +49,14 @@ module Backbone
       def uncapitalize(str)
         str[0, 1].downcase << str[1..-1]
       end
+
+      def coffee_engine?
+        if defined?(Rails) && Rails.application
+          Rails.application.config.generators.options[:rails][:javascript_engine] === :coffee ? true : false
+        else
+          false
+        end
+      end
       
     end
   end
